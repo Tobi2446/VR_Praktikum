@@ -30,10 +30,20 @@ public class DisplayFlightData : MonoBehaviour
         int speedAmplifier = (int) flyJoystick.speedAmplifier;
         textSpeed.text = "Speed: " + speed*speedAmplifier + "km/h";
 
-        if (wert < warningHeight)
+        if (wert < warningHeight) {
         warnImage.SetActive(true);
-        else 
+        textHeight.color = Color.red; 
+        //StartCoroutine(Blink());
+        }
+        else {
         warnImage.SetActive(false);
-
+        textHeight.color = Color.gray;
+        }
     }
+
+    //void Blink(){
+        //textHeight.renderer.enabled = false;
+        //yield WaitForSeconds(0.2);
+        //textHeight.renderer.enabled = true;
+    //}
 }

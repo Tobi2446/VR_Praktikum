@@ -18,5 +18,6 @@ public class FacePlayer : MonoBehaviour
     {
         this.transform.position = player.transform.position + distance * player.transform.forward;
         this.transform.LookAt(player.transform.position);
+        this.transform.Rotate(new Vector3(0,180,0));
     }
 }
